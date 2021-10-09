@@ -1,0 +1,9 @@
+/node_modules
+
+/src/output.css
+
+*.sketch
+*.fig
+*.xd
+
+.DS_STORE

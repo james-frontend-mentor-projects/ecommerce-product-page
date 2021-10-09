@@ -1,0 +1,16 @@
+{
+  "name": "ecommerce-product-page",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "npx tailwindcss build -i src/styles.css -o src/output.css",
+    "dev": "npx tailwindcss build -i src/styles.css -o src/output.css -w",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "tailwindcss": "^2.2.16"
+  }
+}
