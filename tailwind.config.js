@@ -1,7 +1,34 @@
 module.exports = {
   // purge: [],
-  purge: ["./src/**/*.html"],
-  mode: "jit",
+  purge: {
+    content: ["./src/**/*.html"],
+    safelist: [
+      // Classes that appear in cart once there are items in it
+      // Note: some of these are also on the page elsewhere, I'm just being overly careful...
+      "bg-orange",
+      "flex",
+      "flex-col",
+      "flex-shrink",
+      "font-bold",
+      "gap-4",
+      "h-4",
+      "h-auto",
+      "items-center",
+      "justify-between",
+      "justify-center",
+      "p-5",
+      "rounded-lg",
+      "text-black",
+      "text-center",
+      "text-gray-dark",
+      "text-white",
+      "truncate",
+      "w-4",
+      "w-14",
+      "w-48",
+      "w-full",
+    ],
+  },
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {

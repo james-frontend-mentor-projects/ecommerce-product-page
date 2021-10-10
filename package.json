@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "npx tailwindcss build -i src/styles.css -o src/output.css",
+    "build": "NODE_ENV=production npx tailwindcss build -i src/styles.css -o src/output.css",
     "dev": "npx tailwindcss build -i src/styles.css -o src/output.css -w",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
