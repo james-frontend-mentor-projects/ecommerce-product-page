@@ -12,4 +12,14 @@
   .scrollbar-hidden::-webkit-scrollbar {
     display: none;
   }
+  /* Chrome, Safari, Edge, Opera */
+  input.no-input-arrows::-webkit-outer-spin-button,
+  input.no-input-arrows::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  /* Firefox */
+  input[type="number"].no-input-arrows {
+    -moz-appearance: textfield;
+  }
 }
