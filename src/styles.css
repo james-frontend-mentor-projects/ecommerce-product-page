@@ -12,6 +12,9 @@
   .scrollbar-hidden::-webkit-scrollbar {
     display: none;
   }
+  .disable-dbl-tap-zoom {
+    touch-action: manipulation;
+  }
   /* Chrome, Safari, Edge, Opera */
   input.no-input-arrows::-webkit-outer-spin-button,
   input.no-input-arrows::-webkit-inner-spin-button {
