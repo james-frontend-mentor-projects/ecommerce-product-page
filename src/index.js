@@ -96,7 +96,7 @@ const CartHasXItems = (number) => `<div class="flex justify-between items-center
   <img src="./images/image-product-1-thumbnail.jpg" alt="Thumbnail image of product" class="w-14 h-auto" />
   <div class="text-gray-dark flex flex-col w-48">
     <span class="truncate flex-shrink">Fall Limited Edition Sneakers</span>
-    <span class="">
+    <span>
       <span>$125.00 x ${number}</span>
       <span class="text-black font-bold">$${number * 125}.00</span>
     </span>
