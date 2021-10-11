@@ -15,6 +15,9 @@
   .disable-dbl-tap-zoom {
     touch-action: manipulation;
   }
+  .plus-minus-active {
+    filter: invert(95%) sepia(60%) saturate(6975%) hue-rotate(306deg) brightness(98%) contrast(106%);
+  }
   /* Chrome, Safari, Edge, Opera */
   input.no-input-arrows::-webkit-outer-spin-button,
   input.no-input-arrows::-webkit-inner-spin-button {
@@ -30,5 +33,17 @@
 @layer components {
   .plus-minus {
     @apply absolute p-10 flex justify-center items-center top-1/2 transform -translate-y-1/2 disable-dbl-tap-zoom;
+  }
+  .plus-minus:active svg path {
+    @apply fill-orange;
+  }
+  .orange-button {
+    @apply text-white font-bold bg-orange rounded-lg p-5 w-full flex gap-4 disable-dbl-tap-zoom transform active:bg-orange-active;
+  }
+  .mobile-next-previous {
+    @apply h-10 w-10 flex justify-center items-center rounded-full bg-white absolute top-1/2 transform -translate-y-1/2 disable-dbl-tap-zoom;
+  }
+  .mobile-nav-link {
+    @apply font-bold text-lg text-black;
   }
 }

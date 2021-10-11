@@ -105,7 +105,7 @@ const CartHasXItems = (number) => `<div class="flex justify-between items-center
     <img src="./images/icon-delete.svg" alt="Remove item from Cart" />
   </button>
 </div>
-<a href="#" class="text-white font-bold bg-orange rounded-lg p-5 w-full text-center">Checkout</a>`;
+<a href="#" class="orange-button">Checkout</a>`;
 
 function updateCart() {
   if (numberOfItemsInCart < 1) {

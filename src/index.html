@@ -27,11 +27,11 @@
         </button>
         <!-- Menu -->
         <nav class="flex flex-col gap-5 ml-6">
-          <a href="#" class="font-bold text-lg text-black">Collections</a>
-          <a href="#" class="font-bold text-lg text-black">Men</a>
-          <a href="#" class="font-bold text-lg text-black">Women</a>
-          <a href="#" class="font-bold text-lg text-black">About</a>
-          <a href="#" class="font-bold text-lg text-black">Contact</a>
+          <a href="#" class="mobile-nav-link">Collections</a>
+          <a href="#" class="mobile-nav-link">Men</a>
+          <a href="#" class="mobile-nav-link">Women</a>
+          <a href="#" class="mobile-nav-link">About</a>
+          <a href="#" class="mobile-nav-link">Contact</a>
         </nav>
       </div>
     </div>
@@ -85,25 +85,7 @@
       <!-- Mobile Item Pictures -->
       <div class="sm:hidden relative">
         <!-- Previous button -->
-        <button
-          class="
-            h-10
-            w-10
-            flex
-            justify-center
-            items-center
-            rounded-full
-            bg-white
-            absolute
-            left-4
-            top-1/2
-            transform
-            -translate-y-1/2
-            disable-dbl-tap-zoom
-          "
-          id="mobile-previous-image-button"
-          aria-label="Previous image"
-        >
+        <button class="mobile-next-previous left-4" id="mobile-previous-image-button" aria-label="Previous image">
           <svg width="12" height="18" xmlns="http://www.w3.org/2000/svg">
             <path d="M11 1 3 9l8 8" stroke="#1D2026" stroke-width="3" fill="none" fill-rule="evenodd" />
           </svg>
@@ -116,25 +98,7 @@
           <img src="./images/image-product-4.jpg" class="object-cover object-center w-full" />
         </div>
         <!-- Next button -->
-        <button
-          class="
-            h-10
-            w-10
-            flex
-            justify-center
-            items-center
-            rounded-full
-            bg-white
-            absolute
-            right-4
-            top-1/2
-            transform
-            -translate-y-1/2
-            disable-dbl-tap-zoom
-          "
-          id="mobile-next-image-button"
-          aria-label="Next image"
-        >
+        <button class="mobile-next-previous right-4" id="mobile-next-image-button" aria-label="Next image">
           <svg width="13" height="18" xmlns="http://www.w3.org/2000/svg">
             <path d="m2 1 8 8-8 8" stroke="#1D2026" stroke-width="3" fill="none" fill-rule="evenodd" />
           </svg>
@@ -161,7 +125,15 @@
       <!-- Change item quantity -->
       <div class="flex relative mx-6 mb-4">
         <button class="plus-minus -left-4" id="quantity-minus">
-          <img src="./images/icon-minus.svg" />
+          <svg width="12" height="4" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <defs>
+              <path
+                d="M11.357 3.332A.641.641 0 0 0 12 2.69V.643A.641.641 0 0 0 11.357 0H.643A.641.641 0 0 0 0 .643v2.046c0 .357.287.643.643.643h10.714Z"
+                id="a"
+              />
+            </defs>
+            <use fill="#FF7E1B" fill-rule="nonzero" xlink:href="#a" />
+          </svg>
         </button>
         <input
           class="w-full px-6 py-5 bg-gray-light rounded-md text-center font-bold no-input-arrows"
@@ -171,27 +143,21 @@
           id="item-quantity"
         />
         <button class="plus-minus -right-4" id="quantity-plus">
-          <img src="./images/icon-plus.svg" />
+          <svg width="12" height="12" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <defs>
+              <path
+                d="M12 7.023V4.977a.641.641 0 0 0-.643-.643h-3.69V.643A.641.641 0 0 0 7.022 0H4.977a.641.641 0 0 0-.643.643v3.69H.643A.641.641 0 0 0 0 4.978v2.046c0 .356.287.643.643.643h3.69v3.691c0 .356.288.643.644.643h2.046a.641.641 0 0 0 .643-.643v-3.69h3.691A.641.641 0 0 0 12 7.022Z"
+                id="b"
+              />
+            </defs>
+            <use fill="#FF7E1B" fill-rule="nonzero" xlink:href="#b" />
+          </svg>
         </button>
       </div>
 
       <!-- Add to cart button -->
       <div class="px-6">
-        <button
-          class="
-            text-white
-            font-bold
-            bg-orange
-            shadow-bottom-orange
-            rounded-lg
-            p-5
-            w-full
-            flex
-            gap-4
-            disable-dbl-tap-zoom
-          "
-          id="add-to-cart"
-        >
+        <button class="orange-button shadow-bottom-orange" id="add-to-cart">
           <svg width="22" height="20" xmlns="http://www.w3.org/2000/svg">
             <path
               d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z"
