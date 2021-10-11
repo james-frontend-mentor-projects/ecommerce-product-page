@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet" />
     <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
     <title>Frontend Mentor | E-commerce product page</title>
+    <meta name="description" content="E-commerce page built by james-work-account" />
     <link rel="stylesheet" href="./output.css" />
   </head>
   <body class="lg:flex flex-col items-center">
@@ -33,6 +34,77 @@
           <a href="#" class="mobile-nav-link">About</a>
           <a href="#" class="mobile-nav-link">Contact</a>
         </nav>
+      </div>
+    </div>
+
+    <!-- Lightbox overlay -->
+    <!-- <div class="fixed inset-0 bg-black bg-opacity-75 h-full w-full z-50 hidden xs:hidden"> -->
+    <div
+      class="hidden fixed inset-0 bg-black bg-opacity-75 h-full w-full z-50 xs:hidden items-center justify-center"
+      id="lightbox-overlay"
+    >
+      <div class="flex flex-col items-center justify-center">
+        <!-- Close button -->
+        <button class="self-end mb-6 cursor-pointer w-5 h-5 relative bg-close" id="close-lightbox">
+          <span class="sr-only">Close lightbox</span>
+        </button>
+        <!-- Image -->
+        <div class="relative mb-10">
+          <!-- Previous button -->
+          <button
+            class="next-previous left-0 -translate-x-1/2"
+            id="lightbox-previous-image-button"
+            aria-label="Previous image"
+          >
+            <svg width="12" height="18" xmlns="http://www.w3.org/2000/svg">
+              <path d="M11 1 3 9l8 8" stroke="#1D2026" stroke-width="3" fill="none" fill-rule="evenodd" />
+            </svg>
+          </button>
+          <!-- Image -->
+          <img
+            src="./images/image-product-1.jpg"
+            class="w-full max-w-md rounded-2xl minmax-width"
+            id="lightbox-image"
+            alt="Main image of the product (inside lightbox)"
+          />
+          <!-- Next button -->
+          <button class="next-previous right-0 translate-x-1/2" id="lightbox-next-image-button" aria-label="Next image">
+            <svg width="13" height="18" xmlns="http://www.w3.org/2000/svg">
+              <path d="m2 1 8 8-8 8" stroke="#1D2026" stroke-width="3" fill="none" fill-rule="evenodd" />
+            </svg>
+          </button>
+        </div>
+        <!-- Thumbnails -->
+        <form id="lightbox-image-thumbnails" class="flex gap-8 max-w-md items-center">
+          <label for="desktop-thumbnail-1" class="desktop-thumbnail active">
+            <img
+              src="./images/image-product-1-thumbnail.jpg"
+              alt="Image 1 of product (inside lightbox)"
+              class="cursor-pointer mix-blend-lighten brightness-110"
+            />
+          </label>
+          <label for="desktop-thumbnail-2" class="desktop-thumbnail">
+            <img
+              src="./images/image-product-2-thumbnail.jpg"
+              alt="Image 2 of product (inside lightbox)"
+              class="cursor-pointer mix-blend-lighten brightness-110"
+            />
+          </label>
+          <label for="desktop-thumbnail-3" class="desktop-thumbnail">
+            <img
+              src="./images/image-product-3-thumbnail.jpg"
+              alt="Image 3 of product (inside lightbox)"
+              class="cursor-pointer mix-blend-lighten brightness-110"
+            />
+          </label>
+          <label for="desktop-thumbnail-4" class="desktop-thumbnail">
+            <img
+              src="./images/image-product-4-thumbnail.jpg"
+              alt="Image 4 of product (inside lightbox)"
+              class="cursor-pointer mix-blend-lighten brightness-110"
+            />
+          </label>
+        </form>
       </div>
     </div>
 
@@ -126,7 +198,7 @@
       </a>
     </header>
 
-    <main class="relative sm:flex sm:flex-col sm:justify-center lg:flex-row lg:max-w-6xl mb-10">
+    <main class="relative sm:flex sm:flex-col sm:justify-center lg:flex-row lg:max-w-6xl mb-16">
       <!-- Cart -->
       <div
         class="
@@ -154,20 +226,20 @@
       <!-- Mobile Item Pictures -->
       <div class="xs:hidden relative">
         <!-- Previous button -->
-        <button class="mobile-next-previous left-4" id="mobile-previous-image-button" aria-label="Previous image">
+        <button class="next-previous left-4" id="mobile-previous-image-button" aria-label="Previous image">
           <svg width="12" height="18" xmlns="http://www.w3.org/2000/svg">
             <path d="M11 1 3 9l8 8" stroke="#1D2026" stroke-width="3" fill="none" fill-rule="evenodd" />
           </svg>
         </button>
         <!-- Images -->
         <div id="mobile-images" class="flex flex-none scrollbar-hidden overflow-x-auto scroll-snap-x h-72">
-          <img src="./images/image-product-1.jpg" class="object-cover object-center w-full" />
-          <img src="./images/image-product-2.jpg" class="object-cover object-center w-full" />
-          <img src="./images/image-product-3.jpg" class="object-cover object-center w-full" />
-          <img src="./images/image-product-4.jpg" class="object-cover object-center w-full" />
+          <img src="./images/image-product-1.jpg" alt="Image 1 of product" class="object-cover object-center w-full" />
+          <img src="./images/image-product-2.jpg" alt="Image 2 of product" class="object-cover object-center w-full" />
+          <img src="./images/image-product-3.jpg" alt="Image 3 of product" class="object-cover object-center w-full" />
+          <img src="./images/image-product-4.jpg" alt="Image 4 of product" class="object-cover object-center w-full" />
         </div>
         <!-- Next button -->
-        <button class="mobile-next-previous right-4" id="mobile-next-image-button" aria-label="Next image">
+        <button class="next-previous right-4" id="mobile-next-image-button" aria-label="Next image">
           <svg width="13" height="18" xmlns="http://www.w3.org/2000/svg">
             <path d="m2 1 8 8-8 8" stroke="#1D2026" stroke-width="3" fill="none" fill-rule="evenodd" />
           </svg>
@@ -177,10 +249,16 @@
       <!-- Desktop Item Pictures -->
       <div class="hidden xs:flex flex-col flex-1 items-center gap-8">
         <!-- Image -->
-        <img src="./images/image-product-1.jpg" class="w-full max-w-md rounded-2xl" id="desktop-image" />
+        <img
+          src="./images/image-product-1.jpg"
+          role="button"
+          class="w-full max-w-md rounded-2xl cursor-pointer"
+          id="desktop-image"
+          alt="Main image of the product"
+        />
         <!-- Thumbnails -->
         <form id="desktop-image-thumbnails" class="flex gap-8 max-w-md">
-          <label for="desktop-thumbnail-1" class="desktop-thumbnail hover:bg-white hover:bg-opacity-60 active">
+          <label for="desktop-thumbnail-1" class="desktop-thumbnail active">
             <input
               type="radio"
               name="desktop-thumbnail-select"
@@ -189,9 +267,13 @@
               class="hidden-radio"
               checked
             />
-            <img src="./images/image-product-1-thumbnail.jpg" class="cursor-pointer mix-blend-lighten brightness-110" />
+            <img
+              src="./images/image-product-1-thumbnail.jpg"
+              alt="Image 1 of product"
+              class="cursor-pointer mix-blend-lighten brightness-110"
+            />
           </label>
-          <label for="desktop-thumbnail-2" class="desktop-thumbnail hover:bg-white hover:bg-opacity-60">
+          <label for="desktop-thumbnail-2" class="desktop-thumbnail">
             <input
               type="radio"
               name="desktop-thumbnail-select"
@@ -199,9 +281,13 @@
               value="2"
               class="hidden-radio"
             />
-            <img src="./images/image-product-2-thumbnail.jpg" class="cursor-pointer mix-blend-lighten brightness-110" />
+            <img
+              src="./images/image-product-2-thumbnail.jpg"
+              alt="Image 2 of product"
+              class="cursor-pointer mix-blend-lighten brightness-110"
+            />
           </label>
-          <label for="desktop-thumbnail-3" class="desktop-thumbnail hover:bg-white hover:bg-opacity-60">
+          <label for="desktop-thumbnail-3" class="desktop-thumbnail">
             <input
               type="radio"
               name="desktop-thumbnail-select"
@@ -209,9 +295,13 @@
               value="3"
               class="hidden-radio"
             />
-            <img src="./images/image-product-3-thumbnail.jpg" class="cursor-pointer mix-blend-lighten brightness-110" />
+            <img
+              src="./images/image-product-3-thumbnail.jpg"
+              alt="Image 3 of product"
+              class="cursor-pointer mix-blend-lighten brightness-110"
+            />
           </label>
-          <label for="desktop-thumbnail-4" class="desktop-thumbnail hover:bg-white hover:bg-opacity-60">
+          <label for="desktop-thumbnail-4" class="desktop-thumbnail">
             <input
               type="radio"
               name="desktop-thumbnail-select"
@@ -219,7 +309,11 @@
               value="4"
               class="hidden-radio"
             />
-            <img src="./images/image-product-4-thumbnail.jpg" class="cursor-pointer mix-blend-lighten brightness-110" />
+            <img
+              src="./images/image-product-4-thumbnail.jpg"
+              alt="Image 4 of product"
+              class="cursor-pointer mix-blend-lighten brightness-110"
+            />
           </label>
         </form>
       </div>
@@ -240,9 +334,9 @@
           <span class="ml-auto text-gray font-bold text-base lg:flex-100"><s>$250.00</s></span>
         </div>
 
-        <div class="lg:flex lg:gap-4">
+        <div class="sm:flex sm:gap-4">
           <!-- Change item quantity -->
-          <div class="flex relative mx-6 lg:mx-0 mb-4 lg:flex-one-third">
+          <div class="flex relative mx-6 sm:mx-0 mb-4 sm:flex-one-third">
             <button class="plus-minus -left-4" id="quantity-minus">
               <svg width="12" height="4" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <defs>
@@ -253,7 +347,11 @@
                 </defs>
                 <use fill="#FF7E1B" fill-rule="nonzero" xlink:href="#a" />
               </svg>
+              <span class="sr-only">Remove item</span>
             </button>
+            <label for="item-quantity" class="sr-only">
+              Number of items (use buttons either side of this input to change)
+            </label>
             <input
               class="w-full px-6 py-5 bg-gray-light rounded-md text-center font-bold no-input-arrows"
               type="number"
@@ -271,12 +369,13 @@
                 </defs>
                 <use fill="#FF7E1B" fill-rule="nonzero" xlink:href="#b" />
               </svg>
+              <span class="sr-only">Add item</span>
             </button>
           </div>
 
           <!-- Add to cart button -->
-          <div class="px-6 lg:px-0 lg:flex-two-thirds">
-            <button class="orange-button shadow-bottom-orange lg:shadow-none lg:justify-center" id="add-to-cart">
+          <div class="px-6 sm:px-0 sm:flex-two-thirds">
+            <button class="orange-button shadow-bottom-orange sm:shadow-none lg:justify-center" id="add-to-cart">
               <svg width="22" height="20" xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z"
