@@ -36,6 +36,7 @@ module.exports = {
         orange: {
           light: "#ffeee2",
           DEFAULT: "#ff731b",
+          active: "#ffab6a",
         },
         gray: {
           "very-light": "#e4e9f2",
@@ -57,13 +58,18 @@ module.exports = {
       fontSize: {
         xxs: ["10px", "10px"],
       },
+      fill: (theme) => ({
+        orange: theme("colors.orange.active"),
+      }),
     },
     fontFamily: {
       "kumbh-sans": ['"Kumbh Sans"'],
     },
   },
   variants: {
-    extend: {},
+    extend: {
+      backgroundColor: ["active"],
+    },
   },
   plugins: [require("tailwindcss"), require("autoprefixer")],
 };
