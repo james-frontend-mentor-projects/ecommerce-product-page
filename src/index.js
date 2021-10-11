@@ -126,3 +126,17 @@ function updateCart() {
 
 // Set initial value
 updateCart();
+
+/* Desktop images */
+const thumbnailSelectorForm = document.getElementById("desktop-image-thumbnails");
+const desktopImage = document.getElementById("desktop-image");
+thumbnailSelectorForm.onchange = function (e) {
+  // Remove active classes from all labels
+  thumbnailSelectorForm.querySelectorAll("label").forEach((element) => element.classList.remove("active"));
+  // Add active class to this element's label
+  e.target.parentElement.classList.add("active");
+  desktopImage.src = `./images/image-product-${e.target.value}.jpg`;
+};
+thumbnailSelectorForm.onsubmit = function (e) {
+  e.preventDefault();
+};
