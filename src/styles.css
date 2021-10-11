@@ -43,6 +43,25 @@
   input[type="radio"].hidden-radio:checked + img {
     border-color: #ff7e1b;
   }
+
+  /* Close lightbox button - needs to be orange on hover etc, easiest way to do this is swap out images AFAIK */
+  button.bg-close {
+    background-image: url("./images/icon-close-white.svg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+  }
+  button.bg-close:active,
+  button.bg-close:focus,
+  button.bg-close:focus-within,
+  button.bg-close:hover {
+    background-image: url("./images/icon-close-orange.svg");
+  }
+
+  /* max-width for lightbox main image - max-width: min(...) to avoid absolute-positioned arrows going offscreen */
+  .minmax-width {
+    /* between 28rem (max-w-md) and 85vw */
+    max-width: min(28rem, 85vw);
+  }
 }
 
 @layer components {
@@ -53,16 +72,18 @@
     @apply fill-orange;
   }
   .cart:active svg path,
-  .cart:focus svg path,
-  .cart:focus-within svg path,
   .cart:hover svg path {
     @apply fill-black;
   }
   .orange-button {
     @apply text-white font-bold bg-orange rounded-lg p-5 w-full flex items-center gap-4 disable-dbl-tap-zoom transform active:bg-orange-active;
   }
-  .mobile-next-previous {
+  .next-previous {
     @apply h-10 w-10 flex justify-center items-center rounded-full bg-white absolute top-1/2 transform -translate-y-1/2 disable-dbl-tap-zoom;
+  }
+  .next-previous:active svg path,
+  .next-previous:hover svg path {
+    @apply stroke-current text-orange;
   }
   .mobile-nav-link {
     @apply font-bold text-lg text-black;
@@ -76,9 +97,9 @@
     @apply border-orange;
   }
   .desktop-thumbnail {
-    @apply rounded-xl border-2 border-transparent overflow-hidden;
+    @apply rounded-xl border-2 border-transparent overflow-hidden hover:bg-white hover:bg-opacity-60;
   }
   .desktop-thumbnail.active {
-    @apply border-orange bg-white bg-opacity-60;
+    @apply border-orange border-2 bg-white bg-opacity-60;
   }
 }

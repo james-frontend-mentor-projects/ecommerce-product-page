@@ -1,6 +1,7 @@
 /* Global variables */
 const numberOfItems = document.getElementById("item-quantity");
 let numberOfItemsInCart = 0;
+let selectedThumbnailImageIndex = 0;
 
 /* Mobile overlay/menu */
 const menuOpenButton = document.getElementById("open-menu");
@@ -130,13 +131,60 @@ updateCart();
 /* Desktop images */
 const thumbnailSelectorForm = document.getElementById("desktop-image-thumbnails");
 const desktopImage = document.getElementById("desktop-image");
-thumbnailSelectorForm.onchange = function (e) {
+const lightboxSelectorForm = document.getElementById("lightbox-image-thumbnails");
+const lightboxImage = document.getElementById("lightbox-image");
+
+function updateLightboxAndDesktopImage() {
   // Remove active classes from all labels
   thumbnailSelectorForm.querySelectorAll("label").forEach((element) => element.classList.remove("active"));
+  lightboxSelectorForm.querySelectorAll("label").forEach((element) => element.classList.remove("active"));
   // Add active class to this element's label
-  e.target.parentElement.classList.add("active");
-  desktopImage.src = `./images/image-product-${e.target.value}.jpg`;
+  thumbnailSelectorForm.querySelectorAll("label")[selectedThumbnailImageIndex].classList.add("active");
+  lightboxSelectorForm.querySelectorAll("label")[selectedThumbnailImageIndex].classList.add("active");
+
+  desktopImage.src = `./images/image-product-${selectedThumbnailImageIndex + 1}.jpg`;
+  lightboxImage.src = `./images/image-product-${selectedThumbnailImageIndex + 1}.jpg`;
+}
+
+thumbnailSelectorForm.onchange = function (e) {
+  selectedThumbnailImageIndex = parseInt(e.target.value) - 1;
+  updateLightboxAndDesktopImage();
 };
 thumbnailSelectorForm.onsubmit = function (e) {
   e.preventDefault();
+};
+
+desktopImage.onclick = function (e) {
+  lightboxOverlay.classList.remove("xs:hidden");
+  lightboxOverlay.classList.add("xs:flex");
+};
+
+/* Lightbox */
+const lightboxCloseButton = document.getElementById("close-lightbox");
+const lightboxOverlay = document.getElementById("lightbox-overlay");
+lightboxCloseButton.onclick = function () {
+  lightboxOverlay.classList.add("xs:hidden");
+  lightboxOverlay.classList.remove("xs:flex");
+};
+lightboxSelectorForm.onsubmit = function (e) {
+  e.preventDefault();
+};
+
+const lightboxPreviousImageButton = document.getElementById("lightbox-previous-image-button");
+const lightboxNextImageButton = document.getElementById("lightbox-next-image-button");
+lightboxNextImageButton.onclick = function () {
+  if (selectedThumbnailImageIndex + 1 > thumbnailSelectorForm.querySelectorAll("label").length - 1) {
+    selectedThumbnailImageIndex = 0;
+  } else {
+    selectedThumbnailImageIndex += 1;
+  }
+  updateLightboxAndDesktopImage();
+};
+lightboxPreviousImageButton.onclick = function () {
+  if (selectedThumbnailImageIndex - 1 < 0) {
+    selectedThumbnailImageIndex = thumbnailSelectorForm.querySelectorAll("label").length - 1;
+  } else {
+    selectedThumbnailImageIndex -= 1;
+  }
+  updateLightboxAndDesktopImage();
 };
