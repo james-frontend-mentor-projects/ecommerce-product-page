@@ -3,30 +3,45 @@
 @tailwind utilities;
 
 @layer utilities {
+  /* Scroll snapping for mobile images */
   .scroll-snap-x {
     scroll-snap-type: x mandatory;
   }
   .scroll-snap-x > * {
     scroll-snap-align: center;
   }
+
+  /* Hide scrollbar for mobile images */
   .scrollbar-hidden::-webkit-scrollbar {
     display: none;
   }
+
+  /* Disable double-tap-to-zoom on specific elements */
   .disable-dbl-tap-zoom {
     touch-action: manipulation;
   }
-  .plus-minus-active {
-    filter: invert(95%) sepia(60%) saturate(6975%) hue-rotate(306deg) brightness(98%) contrast(106%);
-  }
-  /* Chrome, Safari, Edge, Opera */
+
+  /* Remove up & down arrows on number field - Chrome, Safari, Edge, Opera */
   input.no-input-arrows::-webkit-outer-spin-button,
   input.no-input-arrows::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
   }
-  /* Firefox */
+
+  /* Remove up & down arrows on number field - Firefox */
   input[type="number"].no-input-arrows {
     -moz-appearance: textfield;
+  }
+
+  /* Styling radio buttons for desktop thumbnails */
+  input[type="radio"].hidden-radio {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  input[type="radio"].hidden-radio:checked + img {
+    border-color: #ff7e1b;
   }
 }
 
@@ -37,13 +52,33 @@
   .plus-minus:active svg path {
     @apply fill-orange;
   }
+  .cart:active svg path,
+  .cart:focus svg path,
+  .cart:focus-within svg path,
+  .cart:hover svg path {
+    @apply fill-black;
+  }
   .orange-button {
-    @apply text-white font-bold bg-orange rounded-lg p-5 w-full flex gap-4 disable-dbl-tap-zoom transform active:bg-orange-active;
+    @apply text-white font-bold bg-orange rounded-lg p-5 w-full flex items-center gap-4 disable-dbl-tap-zoom transform active:bg-orange-active;
   }
   .mobile-next-previous {
     @apply h-10 w-10 flex justify-center items-center rounded-full bg-white absolute top-1/2 transform -translate-y-1/2 disable-dbl-tap-zoom;
   }
   .mobile-nav-link {
     @apply font-bold text-lg text-black;
+  }
+  .desktop-nav-link {
+    @apply text-gray-dark pb-8 pt-4 border-b-4 border-transparent;
+  }
+  .desktop-nav-link:focus,
+  .desktop-nav-link:focus-within,
+  .desktop-nav-link:hover {
+    @apply border-orange;
+  }
+  .desktop-thumbnail {
+    @apply rounded-xl border-2 border-transparent overflow-hidden;
+  }
+  .desktop-thumbnail.active {
+    @apply border-orange bg-white bg-opacity-60;
   }
 }

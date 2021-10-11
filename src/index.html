@@ -11,12 +11,12 @@
     <title>Frontend Mentor | E-commerce product page</title>
     <link rel="stylesheet" href="./output.css" />
   </head>
-  <body>
+  <body class="lg:flex flex-col items-center">
     <!-- Mobile Overlay -->
-    <div class="fixed inset-0 bg-black bg-opacity-75 overflow-y-auto h-full w-full sm:hidden z-50 hidden" id="overlay">
+    <div class="fixed inset-0 bg-black bg-opacity-75 overflow-y-auto h-full w-full lg:hidden z-50 hidden" id="overlay">
       <div class="fixed bg-white h-full w-3/4" id="mobile-menu">
         <!-- X button -->
-        <button id="close-menu" class="m-6 mb-14 sm:hidden disable-dbl-tap-zoom" aria-label="Close menu">
+        <button id="close-menu" class="m-6 mb-14 disable-dbl-tap-zoom" aria-label="Close menu">
           <svg width="14" height="15" xmlns="http://www.w3.org/2000/svg">
             <path
               d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z"
@@ -37,23 +37,51 @@
     </div>
 
     <!-- Header -->
-    <header class="flex items-center gap-4 flex-row p-6 sticky top-0 z-40 bg-white">
+    <header
+      class="
+        flex
+        items-center
+        justify-center
+        gap-4
+        flex-row
+        p-6
+        sticky
+        top-0
+        z-40
+        bg-white
+        xs:mb-8
+        sm:mb-24
+        lg:max-w-6xl lg:w-full lg:pb-0
+        md:gap-10
+        xs:border-b xs:border-gray-very-light
+      "
+    >
       <!-- Open Mobile Menu -->
-      <button class="sm:hidden disable-dbl-tap-zoom" id="open-menu" aria-label="Open menu">
+      <button class="lg:hidden disable-dbl-tap-zoom" id="open-menu" aria-label="Open menu">
         <svg width="16" height="15" xmlns="http://www.w3.org/2000/svg">
           <path d="M16 12v3H0v-3h16Zm0-6v3H0V6h16Zm0-6v3H0V0h16Z" fill="#69707D" fill-rule="evenodd" />
         </svg>
       </button>
       <!-- Logo -->
-      <svg width="138" height="20" xmlns="http://www.w3.org/2000/svg">
-        <path
-          d="M8.217 20c4.761 0 7.519-.753 7.519-4.606 0-3.4-3.38-4.172-6.66-4.682l-.56-.085-.279-.041-.35-.053c-2.7-.405-3.18-.788-3.18-1.471 0-.478.49-1.331 2.843-1.331 2.455 0 3.493.647 3.493 1.87v.134h4.281v-.133c0-2.389-1.35-5.238-7.774-5.238-5.952 0-7.201 2.584-7.201 4.752 0 3.097 2.763 4.086 7.223 4.675.21.028.433.054.659.081 1.669.197 3.172.42 3.172 1.585 0 1.01-1.615 1.222-3.298 1.222-2.797 0-3.784-.593-3.784-1.92v-.134H.002L0 14.926v.317c.008.79.118 1.913 1.057 2.862C2.303 19.362 4.712 20 8.217 20Zm13.21 0v-7.49c0-2.104.547-4.423 4.176-4.423 3.915 0 3.778 2.777 3.768 4.042V20h4.18v-7.768c0-2.264-.176-7.766-6.732-7.766-2.778 0-4.192.911-5.195 2.28h-.197V4.467H17.22V20h4.207Zm21.959 0c5.094 0 7.787-2.07 8.217-5.405H47.53c-.386 1.02-1.63 1.72-4.143 1.72-2.721 0-3.962-1.03-4.25-3.106h12.527c.24-2.13-.029-5.417-3.026-7.44v.005c-1.312-.915-3.056-1.465-5.251-1.465-5.24 0-8.336 2.772-8.336 7.845 0 5.17 3.02 7.846 8.336 7.846Zm4.099-9.574h-8.188c.486-1.574 1.764-2.431 4.089-2.431 2.994 0 3.755 1.267 4.099 2.431ZM70.499 20V4.457H66.29V6.74h-.176c-1.053-1.377-2.809-2.283-5.677-2.283-6.433 0-7.225 5.293-7.253 7.635v.137c0 2.092.732 7.771 7.241 7.771 2.914 0 4.684-.818 5.734-2.169h.131V20H70.5Zm-8.854-3.623c-3.996 0-4.447-3.032-4.447-4.148 0-1.21.426-4.148 4.455-4.148 3.631 0 4.374 2.044 4.374 4.148 0 2.35-.742 4.148-4.382 4.148ZM88.826 20l-6.529-9.045 6.588-6.488h-5.827l-6.836 6.756V0h-4.187v19.954h4.187V16.94l3.02-2.976L83.6 20h5.226Zm9.9 0c5.094 0 7.786-2.07 8.217-5.405h-4.074c-.387 1.02-1.63 1.72-4.143 1.72-2.721 0-3.962-1.03-4.25-3.106h12.527c.24-2.13-.029-5.417-3.026-7.44v.005c-1.312-.915-3.057-1.465-5.251-1.465-5.24 0-8.336 2.772-8.336 7.845 0 5.17 3.02 7.846 8.336 7.846Zm4.098-9.574h-8.187c.485-1.574 1.763-2.431 4.089-2.431 2.994 0 3.755 1.267 4.098 2.431ZM112.76 20v-6.97c0-2.103.931-4.542 4.05-4.542 1.33 0 2.393.236 2.785.346l.67-3.976c-.728-.16-1.626-.392-2.757-.392-2.665 0-3.622.794-4.486 2.282h-.262V4.466h-4.21V20h4.21Zm17.221 0c4.761 0 7.519-.753 7.519-4.606 0-3.4-3.38-4.172-6.66-4.682l-.56-.085-.279-.041-.349-.053c-2.701-.405-3.181-.788-3.181-1.471 0-.478.49-1.331 2.843-1.331 2.455 0 3.493.647 3.493 1.87v.134h4.282v-.133c0-2.389-1.35-5.238-7.775-5.238-5.952 0-7.201 2.584-7.201 4.752 0 3.097 2.763 4.086 7.224 4.675.21.028.432.054.658.081 1.669.197 3.172.42 3.172 1.585 0 1.01-1.615 1.222-3.298 1.222-2.796 0-3.784-.593-3.784-1.92v-.134h-4.319l-.001.301v.317c.008.79.117 1.913 1.056 2.862 1.246 1.257 3.655 1.895 7.16 1.895Z"
-          fill="#1D2026"
-          fill-rule="nonzero"
-        />
-      </svg>
+      <div class="lg:pb-6">
+        <svg width="138" height="20" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M8.217 20c4.761 0 7.519-.753 7.519-4.606 0-3.4-3.38-4.172-6.66-4.682l-.56-.085-.279-.041-.35-.053c-2.7-.405-3.18-.788-3.18-1.471 0-.478.49-1.331 2.843-1.331 2.455 0 3.493.647 3.493 1.87v.134h4.281v-.133c0-2.389-1.35-5.238-7.774-5.238-5.952 0-7.201 2.584-7.201 4.752 0 3.097 2.763 4.086 7.223 4.675.21.028.433.054.659.081 1.669.197 3.172.42 3.172 1.585 0 1.01-1.615 1.222-3.298 1.222-2.797 0-3.784-.593-3.784-1.92v-.134H.002L0 14.926v.317c.008.79.118 1.913 1.057 2.862C2.303 19.362 4.712 20 8.217 20Zm13.21 0v-7.49c0-2.104.547-4.423 4.176-4.423 3.915 0 3.778 2.777 3.768 4.042V20h4.18v-7.768c0-2.264-.176-7.766-6.732-7.766-2.778 0-4.192.911-5.195 2.28h-.197V4.467H17.22V20h4.207Zm21.959 0c5.094 0 7.787-2.07 8.217-5.405H47.53c-.386 1.02-1.63 1.72-4.143 1.72-2.721 0-3.962-1.03-4.25-3.106h12.527c.24-2.13-.029-5.417-3.026-7.44v.005c-1.312-.915-3.056-1.465-5.251-1.465-5.24 0-8.336 2.772-8.336 7.845 0 5.17 3.02 7.846 8.336 7.846Zm4.099-9.574h-8.188c.486-1.574 1.764-2.431 4.089-2.431 2.994 0 3.755 1.267 4.099 2.431ZM70.499 20V4.457H66.29V6.74h-.176c-1.053-1.377-2.809-2.283-5.677-2.283-6.433 0-7.225 5.293-7.253 7.635v.137c0 2.092.732 7.771 7.241 7.771 2.914 0 4.684-.818 5.734-2.169h.131V20H70.5Zm-8.854-3.623c-3.996 0-4.447-3.032-4.447-4.148 0-1.21.426-4.148 4.455-4.148 3.631 0 4.374 2.044 4.374 4.148 0 2.35-.742 4.148-4.382 4.148ZM88.826 20l-6.529-9.045 6.588-6.488h-5.827l-6.836 6.756V0h-4.187v19.954h4.187V16.94l3.02-2.976L83.6 20h5.226Zm9.9 0c5.094 0 7.786-2.07 8.217-5.405h-4.074c-.387 1.02-1.63 1.72-4.143 1.72-2.721 0-3.962-1.03-4.25-3.106h12.527c.24-2.13-.029-5.417-3.026-7.44v.005c-1.312-.915-3.057-1.465-5.251-1.465-5.24 0-8.336 2.772-8.336 7.845 0 5.17 3.02 7.846 8.336 7.846Zm4.098-9.574h-8.187c.485-1.574 1.763-2.431 4.089-2.431 2.994 0 3.755 1.267 4.098 2.431ZM112.76 20v-6.97c0-2.103.931-4.542 4.05-4.542 1.33 0 2.393.236 2.785.346l.67-3.976c-.728-.16-1.626-.392-2.757-.392-2.665 0-3.622.794-4.486 2.282h-.262V4.466h-4.21V20h4.21Zm17.221 0c4.761 0 7.519-.753 7.519-4.606 0-3.4-3.38-4.172-6.66-4.682l-.56-.085-.279-.041-.349-.053c-2.701-.405-3.181-.788-3.181-1.471 0-.478.49-1.331 2.843-1.331 2.455 0 3.493.647 3.493 1.87v.134h4.282v-.133c0-2.389-1.35-5.238-7.775-5.238-5.952 0-7.201 2.584-7.201 4.752 0 3.097 2.763 4.086 7.224 4.675.21.028.432.054.658.081 1.669.197 3.172.42 3.172 1.585 0 1.01-1.615 1.222-3.298 1.222-2.796 0-3.784-.593-3.784-1.92v-.134h-4.319l-.001.301v.317c.008.79.117 1.913 1.056 2.862 1.246 1.257 3.655 1.895 7.16 1.895Z"
+            fill="#1D2026"
+            fill-rule="nonzero"
+          />
+        </svg>
+      </div>
+      <!-- Desktop Menu -->
+      <nav class="hidden lg:flex gap-8 ml-14">
+        <a href="#" class="desktop-nav-link">Collections</a>
+        <a href="#" class="desktop-nav-link">Men</a>
+        <a href="#" class="desktop-nav-link">Women</a>
+        <a href="#" class="desktop-nav-link">About</a>
+        <a href="#" class="desktop-nav-link">Contact</a>
+      </nav>
       <!-- Cart -->
-      <button aria-label="Open cart" class="ml-auto relative disable-dbl-tap-zoom" id="toggle-cart">
+      <button aria-label="Open cart" class="ml-auto relative disable-dbl-tap-zoom lg:pb-4 cart" id="toggle-cart">
         <svg width="22" height="20" xmlns="http://www.w3.org/2000/svg">
           <path
             d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z"
@@ -62,20 +90,61 @@
           />
         </svg>
         <span
-          class="hidden absolute text-white font-bold bg-orange rounded-full -right-2 -top-2 text-xxs py-0.25 px-1.5"
+          class="
+            hidden
+            absolute
+            text-white
+            font-bold
+            bg-orange
+            rounded-full
+            -right-2
+            -top-2
+            text-xxs
+            pb-px
+            pt-0.5
+            px-1.5
+          "
           id="cart-item-count-indicator"
         >
           0
         </span>
       </button>
-      <a aria-label="View profile" href="#">
-        <img src="./images/image-avatar.png" alt="Profile picture" class="h-6 w-6" />
+      <a
+        aria-label="View profile"
+        href="#"
+        class="
+          rounded-full
+          border-2 border-transparent
+          active:border-orange
+          focus:border-orange
+          focus-within:border-orange
+          hover:border-orange
+          lg:mb-4
+        "
+      >
+        <img src="./images/image-avatar.png" alt="Profile picture" class="w-6 md:w-12" />
       </a>
     </header>
 
-    <main class="relative">
+    <main class="relative sm:flex sm:flex-col sm:justify-center lg:flex-row lg:max-w-6xl mb-10">
       <!-- Cart -->
-      <div class="hidden absolute top-2 inset-x-2 h-64 bg-white z-30 rounded-lg flex flex-col" id="cart">
+      <div
+        class="
+          hidden
+          absolute
+          top-2
+          inset-x-2
+          h-64
+          bg-white
+          z-30
+          rounded-lg
+          flex flex-col
+          xs:w-96 xs:right-4 xs:left-auto xs:top-16 xs:z-40 xs:fixed
+          lg:absolute lg:-top-28
+          shadow-gray
+        "
+        id="cart"
+      >
         <h3 class="text-black font-bold py-6 pl-6 border-b border-gray-very-light">Cart</h3>
         <div class="flex justify-center items-center flex-grow flex-col px-6 gap-6 overflow-x-hidden" id="cart-info">
           <h4 class="text-gray-dark font-bold">Your cart is empty.</h4>
@@ -83,7 +152,7 @@
       </div>
 
       <!-- Mobile Item Pictures -->
-      <div class="sm:hidden relative">
+      <div class="xs:hidden relative">
         <!-- Previous button -->
         <button class="mobile-next-previous left-4" id="mobile-previous-image-button" aria-label="Previous image">
           <svg width="12" height="18" xmlns="http://www.w3.org/2000/svg">
@@ -105,68 +174,120 @@
         </button>
       </div>
 
-      <!-- Sneaker info -->
-      <div>
+      <!-- Desktop Item Pictures -->
+      <div class="hidden xs:flex flex-col flex-1 items-center gap-8">
+        <!-- Image -->
+        <img src="./images/image-product-1.jpg" class="w-full max-w-md rounded-2xl" id="desktop-image" />
+        <!-- Thumbnails -->
+        <form id="desktop-image-thumbnails" class="flex gap-8 max-w-md">
+          <label for="desktop-thumbnail-1" class="desktop-thumbnail hover:bg-white hover:bg-opacity-60 active">
+            <input
+              type="radio"
+              name="desktop-thumbnail-select"
+              id="desktop-thumbnail-1"
+              value="1"
+              class="hidden-radio"
+              checked
+            />
+            <img src="./images/image-product-1-thumbnail.jpg" class="cursor-pointer mix-blend-lighten brightness-110" />
+          </label>
+          <label for="desktop-thumbnail-2" class="desktop-thumbnail hover:bg-white hover:bg-opacity-60">
+            <input
+              type="radio"
+              name="desktop-thumbnail-select"
+              id="desktop-thumbnail-2"
+              value="2"
+              class="hidden-radio"
+            />
+            <img src="./images/image-product-2-thumbnail.jpg" class="cursor-pointer mix-blend-lighten brightness-110" />
+          </label>
+          <label for="desktop-thumbnail-3" class="desktop-thumbnail hover:bg-white hover:bg-opacity-60">
+            <input
+              type="radio"
+              name="desktop-thumbnail-select"
+              id="desktop-thumbnail-3"
+              value="3"
+              class="hidden-radio"
+            />
+            <img src="./images/image-product-3-thumbnail.jpg" class="cursor-pointer mix-blend-lighten brightness-110" />
+          </label>
+          <label for="desktop-thumbnail-4" class="desktop-thumbnail hover:bg-white hover:bg-opacity-60">
+            <input
+              type="radio"
+              name="desktop-thumbnail-select"
+              id="desktop-thumbnail-4"
+              value="4"
+              class="hidden-radio"
+            />
+            <img src="./images/image-product-4-thumbnail.jpg" class="cursor-pointer mix-blend-lighten brightness-110" />
+          </label>
+        </form>
+      </div>
+
+      <div class="flex-1">
+        <!-- Sneaker info -->
         <h2 class="text-orange uppercase tracking-widest text-xs font-bold m-6">Sneaker Company</h2>
-        <h1 class="text-black text-3xl font-bold ml-6 mb-4">Fall Limited Edition Sneakers</h1>
+        <h1 class="text-black text-3xl lg:text-5xl font-bold ml-6 mb-4 lg:mb-8">Fall Limited Edition Sneakers</h1>
         <p class="text-gray-dark text-base mx-6 mb-6">
           These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole,
           they’ll withstand everything the weather can offer.
         </p>
-      </div>
 
-      <!-- Sneaker price -->
-      <div class="flex mx-6 mb-6 items-center">
-        <span class="mr-4 text-black text-3xl font-bold">$125.00</span>
-        <span class="rounded-md bg-orange-light text-orange font-bold px-3 py-1">50%</span>
-        <span class="ml-auto text-gray font-bold text-base"><s>$250.00</s></span>
-      </div>
+        <!-- Sneaker price -->
+        <div class="flex mx-6 mb-6 lg:mb-8 items-center flex-wrap lg:gap-y-2.5">
+          <span class="mr-4 text-black text-3xl font-bold">$125.00</span>
+          <span class="rounded-md bg-orange-light text-orange font-bold px-3 py-1">50%</span>
+          <span class="ml-auto text-gray font-bold text-base lg:flex-100"><s>$250.00</s></span>
+        </div>
 
-      <!-- Change item quantity -->
-      <div class="flex relative mx-6 mb-4">
-        <button class="plus-minus -left-4" id="quantity-minus">
-          <svg width="12" height="4" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-            <defs>
-              <path
-                d="M11.357 3.332A.641.641 0 0 0 12 2.69V.643A.641.641 0 0 0 11.357 0H.643A.641.641 0 0 0 0 .643v2.046c0 .357.287.643.643.643h10.714Z"
-                id="a"
-              />
-            </defs>
-            <use fill="#FF7E1B" fill-rule="nonzero" xlink:href="#a" />
-          </svg>
-        </button>
-        <input
-          class="w-full px-6 py-5 bg-gray-light rounded-md text-center font-bold no-input-arrows"
-          type="number"
-          readonly
-          value="0"
-          id="item-quantity"
-        />
-        <button class="plus-minus -right-4" id="quantity-plus">
-          <svg width="12" height="12" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-            <defs>
-              <path
-                d="M12 7.023V4.977a.641.641 0 0 0-.643-.643h-3.69V.643A.641.641 0 0 0 7.022 0H4.977a.641.641 0 0 0-.643.643v3.69H.643A.641.641 0 0 0 0 4.978v2.046c0 .356.287.643.643.643h3.69v3.691c0 .356.288.643.644.643h2.046a.641.641 0 0 0 .643-.643v-3.69h3.691A.641.641 0 0 0 12 7.022Z"
-                id="b"
-              />
-            </defs>
-            <use fill="#FF7E1B" fill-rule="nonzero" xlink:href="#b" />
-          </svg>
-        </button>
-      </div>
-
-      <!-- Add to cart button -->
-      <div class="px-6">
-        <button class="orange-button shadow-bottom-orange" id="add-to-cart">
-          <svg width="22" height="20" xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z"
-              fill="#FFFFFF"
-              fill-rule="nonzero"
+        <div class="lg:flex lg:gap-4">
+          <!-- Change item quantity -->
+          <div class="flex relative mx-6 lg:mx-0 mb-4 lg:flex-one-third">
+            <button class="plus-minus -left-4" id="quantity-minus">
+              <svg width="12" height="4" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <defs>
+                  <path
+                    d="M11.357 3.332A.641.641 0 0 0 12 2.69V.643A.641.641 0 0 0 11.357 0H.643A.641.641 0 0 0 0 .643v2.046c0 .357.287.643.643.643h10.714Z"
+                    id="a"
+                  />
+                </defs>
+                <use fill="#FF7E1B" fill-rule="nonzero" xlink:href="#a" />
+              </svg>
+            </button>
+            <input
+              class="w-full px-6 py-5 bg-gray-light rounded-md text-center font-bold no-input-arrows"
+              type="number"
+              readonly
+              value="0"
+              id="item-quantity"
             />
-          </svg>
-          Add to cart
-        </button>
+            <button class="plus-minus -right-4" id="quantity-plus">
+              <svg width="12" height="12" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <defs>
+                  <path
+                    d="M12 7.023V4.977a.641.641 0 0 0-.643-.643h-3.69V.643A.641.641 0 0 0 7.022 0H4.977a.641.641 0 0 0-.643.643v3.69H.643A.641.641 0 0 0 0 4.978v2.046c0 .356.287.643.643.643h3.69v3.691c0 .356.288.643.644.643h2.046a.641.641 0 0 0 .643-.643v-3.69h3.691A.641.641 0 0 0 12 7.022Z"
+                    id="b"
+                  />
+                </defs>
+                <use fill="#FF7E1B" fill-rule="nonzero" xlink:href="#b" />
+              </svg>
+            </button>
+          </div>
+
+          <!-- Add to cart button -->
+          <div class="px-6 lg:px-0 lg:flex-two-thirds">
+            <button class="orange-button shadow-bottom-orange lg:shadow-none lg:justify-center" id="add-to-cart">
+              <svg width="22" height="20" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z"
+                  fill="#FFFFFF"
+                  fill-rule="nonzero"
+                />
+              </svg>
+              Add to cart
+            </button>
+          </div>
+        </div>
       </div>
     </main>
     <script src="./index.js"></script>

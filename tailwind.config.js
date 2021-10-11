@@ -1,3 +1,5 @@
+const defaultTheme = require("tailwindcss/defaultTheme");
+
 module.exports = {
   // purge: [],
   purge: {
@@ -29,6 +31,7 @@ module.exports = {
       "w-full",
     ],
   },
+  mode: "jit",
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
@@ -50,6 +53,7 @@ module.exports = {
       },
       boxShadow: {
         "bottom-orange": "0px 20px 50px -20px #FF7E1B",
+        gray: "0px 20px 50px -20px rgba(29, 32, 38, 0.503143)",
       },
       spacing: {
         0.25: "3px",
@@ -60,15 +64,27 @@ module.exports = {
       },
       fill: (theme) => ({
         orange: theme("colors.orange.active"),
+        black: theme("colors.black"),
       }),
+      flex: {
+        100: "0 0 100%",
+        "one-third": "0 0 30%",
+        "two-thirds": "0 0 66%",
+      },
     },
     fontFamily: {
       "kumbh-sans": ['"Kumbh Sans"'],
+    },
+
+    screens: {
+      xs: "475px",
+      ...defaultTheme.screens,
     },
   },
   variants: {
     extend: {
       backgroundColor: ["active"],
+      borderColor: ["active"],
     },
   },
   plugins: [require("tailwindcss"), require("autoprefixer")],
