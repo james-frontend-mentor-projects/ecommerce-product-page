@@ -34,23 +34,27 @@ Users should be able to:
 ### Screenshots
 
 <details>
-<summary>Desktop screenshot</summary>
-![![Screenshot of desktop view](screenshots/desktop.png)](screenshots/desktop.png)
+  <summary>Desktop screenshot</summary>
+
+  ![![Screenshot of desktop view](screenshots/desktop.png)](screenshots/desktop.png)
 </details>
 
 <details>
-<summary>Desktop screenshot with cart open</summary>
-![![Screenshot of desktop view with cart open](screenshots/desktop-with-cart.png)](screenshots/desktop-with-cart.png)
+  <summary>Desktop screenshot with cart open</summary>
+
+  ![![Screenshot of desktop view with cart open](screenshots/desktop-with-cart.png)](screenshots/desktop-with-cart.png)
 </details>
 
 <details>
-<summary>Mobile screenshot</summary>
-![![Screenshot of mobile view](screenshots/mobile.png)](screenshots/mobile.png)
+  <summary>Mobile screenshot</summary>
+
+  ![![Screenshot of mobile view](screenshots/mobile.png)](screenshots/mobile.png)
 </details>
 
 <details>
-<summary>Mobile screenshot with cart open</summary>
-![![Screenshot of mobile view with cart open](screenshots/mobile-with-cart.png)](screenshots/mobile-with-cart.png)
+  <summary>Mobile screenshot with cart open</summary>
+
+  ![![Screenshot of mobile view with cart open](screenshots/mobile-with-cart.png)](screenshots/mobile-with-cart.png)
 </details>
 
 ### Links
