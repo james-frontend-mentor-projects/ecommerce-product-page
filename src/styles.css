@@ -26,3 +26,9 @@
     -moz-appearance: textfield;
   }
 }
+
+@layer components {
+  .plus-minus {
+    @apply absolute p-10 flex justify-center items-center top-1/2 transform -translate-y-1/2 disable-dbl-tap-zoom;
+  }
+}
